@@ -18,7 +18,7 @@ include_once('Config.class.php');
 // Time is always in UTC
 date_default_timezone_set('UTC');
 // Initialize the ORM with the right credentials
-R::setup(Config::$DB,Config::$DB_USER,Config::$DB_PASSWORD);
+//R::setup(Config::$DB,Config::$DB_USER,Config::$DB_PASSWORD);
 
 //When do class could not be found, try to autoload in root
 function __autoload($class){
@@ -29,9 +29,10 @@ function __autoload($class){
     }
 }
 
-//map urls to a classname
+//map urls to a controller
 $urls = array(
     "/" => "Index",
+    "/(.*?)/(.*)" => "ScreenController",
     "(.*)" => "AController" 
 );
 
