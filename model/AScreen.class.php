@@ -27,10 +27,13 @@ class AScreen{
     function injectMessage($message){
         echo $message;
         //"$(main).html(\"".$message."\"); setTimeout(function(){location.reload(true);},2000);"
-	$message = str_replace("'","\\'",$message);
+        $message = str_replace("'","\\'",$message);
         $this->sendMessage($this->hostname, "$(main).html('<p id=\"koffie\" class=\"color\">".$message."</p><style>#koffie{ color: white; font-size: 80px; text-align: center; border-top: 400px solid white;}</style>'); setTimeout(function(){location.reload(true);},30000);");
     }
     
+    function showImage($url){
+        $this->sendMessage($this->hostname, "$('.container').html(''); $('body').css('background-image', 'url(".$url.")');\");");
+    }
 
     function sendMessage($host,$msg){
         //echo "Executing";
