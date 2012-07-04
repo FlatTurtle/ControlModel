@@ -11,7 +11,7 @@ $("#button1").click(function(){
             value: "on"
         },
 	success: function(){
-		//location.reload(true);
+		location.reload(true);
 	}
     });
 });
@@ -24,7 +24,7 @@ $("#button2").click(function(){
             value: "off"
         },
 	success: function(){
-		//location.reload(true);
+		location.reload(true);
 	}
     });
 });
@@ -38,7 +38,7 @@ $("#button3").click(function(){
             value: "reload"
         },
 	success: function(){
-		//location.reload(true);
+		location.reload(true);
 	}
     });
 });
@@ -52,25 +52,25 @@ $("#button4submit").click(function(){
         type: "POST",
         data: {
             message: msg,
-            value: "message",
+            value: "message"
         },
 	success: function(){
-		//location.reload(true);
+		location.reload(true);
 	}
     });
 });
 $("#buttontest").click(function(){
-    $("#button4submit").html("Sending...");
+    $("#buttontest").html("Sending...");
     var msg = $("#image_url").val();
     $.ajax({
         url: "../screen/"+hostname+"/image",
         type: "POST",
         data: {
             message: msg,
-            value: "message",
+            value: "message"
         },
 	success: function(){
-		//location.reload(true);
+		location.reload(true);
 	}
     });
 });

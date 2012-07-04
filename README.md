@@ -17,6 +17,10 @@ public function GET($matches){
     $matches; //matches your regex
 }
 
+Linux:
+- make files /var/log/jaxl.log and /var/run/jaxl.lib
+- give www-data permissions to these files (or chmod 777)
+
 # License
 
 Code written by myself in this repository can be used under the BeerPL revision 42. This means if you see me in person and you make use of this repository, you'have to buy me a beer.
