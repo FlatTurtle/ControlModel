@@ -59,16 +59,15 @@ $("#button4submit").click(function(){
 	}
     });
 });
-
-$("#button5submit").click(function(){
-    $("#button5submit").html("Sending...");
-    var url = $("#image_url").val();
+$("#buttontest").click(function(){
+    $("#button4submit").html("Sending...");
+    var msg = $("#image_url").val();
     $.ajax({
         url: "../screen/"+hostname+"/image",
         type: "POST",
         data: {
-            message: url,
-            value: "image_url",
+            message: msg,
+            value: "message",
         },
 	success: function(){
 		//location.reload(true);

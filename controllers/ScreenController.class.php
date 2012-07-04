@@ -16,6 +16,7 @@ class ScreenController extends AController{
     }
 
     function POST($matches){
+	echo 'test';
         if($this->isAuthenticated()){
             $host = urldecode($matches[1]);
             if($host != "testclient" && $host != "efikamx-561dcb" && $host != "efikamx--5fb019"){ // In meantime
@@ -52,8 +53,8 @@ class ScreenController extends AController{
                 }  
                 
             }else if($func == "image"){
-                if(isset($_POST["image_url"])){
-                    $model->showImage($_POST["image_url"]);
+                if(true){
+                    $model->showImage($_POST["message"]);
                 }else{
                     echo "you didn't provide any POST parameters";
                 }  
