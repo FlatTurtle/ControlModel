@@ -32,7 +32,8 @@ function __autoload($class){
 //map urls to a controller
 $urls = array(
     "/" => "Index",
-    "/(.*?)/(.*)" => "ScreenController",
+    "/touch/([^/]+)/?" => "GUIController",
+    "/screen/([^/]*?)/(.*)" => "ScreenController",
     "(.*)" => "AController" 
 );
 
