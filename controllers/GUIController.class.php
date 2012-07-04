@@ -9,7 +9,10 @@ class GuiController extends AController{
         //First let's check if you're logged in
         if($this->isAuthenticated()){
             $host = $matches[1];
-            $args = explode("/",$matches[2]);
+            $arg = array();
+            if(isset($matches[2])){
+                $args = explode("/",$matches[2]);
+            }
             include_once("pages/header.html");
             $this->hostname = $host;
             include_once("pages/" .strtolower("touchturtle.html"));
