@@ -24,6 +24,10 @@ class AScreen{
         $this->sendMessage($this->hostname, "location.reload(true);");
     }
 
+    function back(){
+        $this->sendMessage($this->hostname, "history.back();");
+    }
+
     function injectMessage($message){
         echo $message;
         //"$(main).html(\"".$message."\"); setTimeout(function(){location.reload(true);},2000);"
@@ -36,6 +40,13 @@ class AScreen{
         //"$(main).html(\"".$message."\"); setTimeout(function(){location.reload(true);},2000);"
         $message = str_replace("'","\\'",$message);
         $this->sendMessage($this->hostname, "$('.container').html('');$('.container').css({'background': 'black url(".$message.") center center no-repeat'}); setTimeout(function(){location.reload(true);},30000);");
+    }
+
+    function browseUrl($message){
+        echo $message;
+        //"$(main).html(\"".$message."\"); setTimeout(function(){location.reload(true);},2000);"
+        $message = str_replace("'","\\'",$message);
+        $this->sendMessage($this->hostname, "window.location=\"".$message."\";");
     }
 
     function sendMessage($host,$msg){

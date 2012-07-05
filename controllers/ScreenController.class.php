@@ -42,6 +42,8 @@ class ScreenController extends AController{
                     $value = $_POST["value"];
                     if($value == "reload"){
                         $model->reload();
+                    }else if($value == "back"){
+                        $model->back();
                     }else if($value == "message"){
                         if(isset($_POST["message"])){
                             $model->injectMessage($_POST["message"]);
@@ -57,6 +59,12 @@ class ScreenController extends AController{
                 }else{
                     echo "you didn't provide any POST parameters";
                 }  
+            }else if($func == "url"){
+                if(isset($_POST["message"])){
+                    $model->browseUrl($_POST["message"]);
+                }else{
+                    echo "you didn't provide any POST parameters";
+                }
             }
             
         }else{

@@ -73,4 +73,31 @@ $("#buttontest").click(function(){
 		location.reload(true);
 	}
     });
+})
+$("#button_url").click(function(){
+    $("#button_url").html("Sending...");
+    var msg = $("#page_url").val();
+    $.ajax({
+        url: "../screen/"+hostname+"/url",
+        type: "POST",
+        data: {
+            message: msg,
+            value: "message"
+        },
+        success: function(){
+            location.reload(true);
+        }
+    });
+});
+$("#button_previous").click(function(){
+    $.ajax({
+        url: "../screen/" + hostname + "/status",
+        type: "POST",
+        data: {
+            value: "back"
+        },
+        success: function(){
+            location.reload(true);
+        }
+    });
 });
