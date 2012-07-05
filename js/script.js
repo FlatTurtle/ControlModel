@@ -11,7 +11,7 @@ $("#button1").click(function(){
             value: "on"
         },
 	success: function(){
-		location.reload(true);
+		//location.reload(true);
 	}
     });
 });
@@ -24,7 +24,7 @@ $("#button2").click(function(){
             value: "off"
         },
 	success: function(){
-		location.reload(true);
+		//location.reload(true);
 	}
     });
 });
@@ -38,7 +38,7 @@ $("#button3").click(function(){
             value: "reload"
         },
 	success: function(){
-		location.reload(true);
+		//location.reload(true);
 	}
     });
 });
@@ -55,7 +55,23 @@ $("#button4submit").click(function(){
             value: "message",
         },
 	success: function(){
-		location.reload(true);
+		//location.reload(true);
+	}
+    });
+});
+
+$("#button5submit").click(function(){
+    $("#button5submit").html("Sending...");
+    var url = $("#image_url").val();
+    $.ajax({
+        url: "../screen/"+hostname+"/image",
+        type: "POST",
+        data: {
+            message: url,
+            value: "image_url",
+        },
+	success: function(){
+		//location.reload(true);
 	}
     });
 });

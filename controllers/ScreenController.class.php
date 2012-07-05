@@ -51,6 +51,12 @@ class ScreenController extends AController{
                     echo "you didn't provide any POST parameters";
                 }  
                 
+            }else if($func == "image"){
+                if(isset($_POST["image_url"])){
+                    $model->showImage($_POST["image_url"]);
+                }else{
+                    echo "you didn't provide any POST parameters";
+                }  
             }
             
         }else{
