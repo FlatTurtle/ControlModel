@@ -234,7 +234,7 @@
         /**
          * Absolute path of pid file for this Jaxl instance
         */
-        var $pidPath = '/var/run/jaxl.pid';
+        var $pidPath = 'jaxl.pid';
 
         /**
          * Enable/Disable shutdown callback on SIGH terms
