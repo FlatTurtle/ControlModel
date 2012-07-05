@@ -35,7 +35,7 @@ class AScreen{
         echo $message;
         //"$(main).html(\"".$message."\"); setTimeout(function(){location.reload(true);},2000);"
         $message = str_replace("'","\\'",$message);
-        $this->sendMessage($this->hostname, "$('.container').html('');$('body').css('background-image', 'url(".$message.")'); setTimeout(function(){location.reload(true);},30000);");
+        $this->sendMessage($this->hostname, "$('.container').html('');$('.container').css({'background': 'black url(".$message.") center center no-repeat'}); setTimeout(function(){location.reload(true);},30000);");
     }
 
     function sendMessage($host,$msg){
