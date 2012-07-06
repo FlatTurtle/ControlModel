@@ -26,14 +26,17 @@ function __autoload($class){
         include_once($class . ".class.php");
     }else if(file_exists("controllers/" . $class . ".class.php")){
         include_once("controllers/" . $class . ".class.php");
+    }else if(file_exists("model/" .$class. ".class.php")){
+        include_once("model/" .$class. ".class.php");
     }
 }
 
 //map urls to a controller
 $urls = array(
     "/" => "Index",
-    "/touch/([^/]+)/?" => "GUIController",
-    "/screen/([^/]*?)/(.*)" => "ScreenController",
+    "/(?P<host>[^/]+)/screen/(.*)"=> "ScreenController",
+    "/(?P<host>[^/]+)/plugin/(?P<name>\w+)/(?P<action>\w+)/?"=> "PluginController",
+    "/(?P<host>[^/]+)/turtle/(?P<id>\w+)/?"=> "TurtleController",
     "(.*)" => "AController" 
 );
 
